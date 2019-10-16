@@ -42,4 +42,6 @@ jobs:
       - name: Publish to npm
         run: npm publish --tag master
         env:
+          JKA_TEST: foobar
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          COMMIT_SHA: ${{github.sha}}
