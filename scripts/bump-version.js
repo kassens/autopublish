@@ -5,7 +5,7 @@ const packageJson = require("../package.json");
 
 const commitSha = process.argv[2];
 
-if (process.argv.length !== 3 || commitSha.length !== 42) {
+if (process.argv.length !== 3 || commitSha.length !== 40) {
   process.stderr.write(
     `Usage:\n  ${process.argv[0]} ${process.argv[1]} COMMIT_SHA\n`
   );
