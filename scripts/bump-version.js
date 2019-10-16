@@ -12,7 +12,7 @@ if (process.argv.length !== 3 || commitSha.length !== 40) {
   process.exit(1);
 }
 
-const version = `0.0.0-master.${commitSha.substr(0, 8)}`;
+const version = `0.0.0-master-${commitSha.substr(0, 8)}`;
 
 process.stdout.write(`Bumping version to '${version}'.\n`);
 
