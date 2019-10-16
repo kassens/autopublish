@@ -35,13 +35,8 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - name: Set version
-        run: echo $COMMIT_SHA $JKA_TEST
-        env:
-          JKA_TEST: foobar
-          COMMIT_SHA: ${{github.sha}}
+        run: echo ${{github.sha}}; node scripts/bump-version.js ${{github.sha}}
       - name: Publish to npm
         run: npm publish --tag master
         env:
-          JKA_TEST: foobar
-          XXNODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-          COMMIT_SHA: ${{github.sha}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
