@@ -3,7 +3,7 @@ const fs = require("fs");
 
 const packageJson = require("../package.json");
 
-const version = `0.0.0-next.${Date.now()}`;
+const version = `0.0.0-master.${Date.now()}`;
 
 process.stdout.write(`Bumping version to '${version}'.\n`);
 
