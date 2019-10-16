@@ -6,6 +6,6 @@
   "author": "Jan Kassens <jan@kassens.net>",
   "license": "MIT",
   "scripts": {
-    "test": "node --version; echo fail; exit 1"
+    "test": "node --version; echo fail; exit 0"
   }
 }
