@@ -19,8 +19,12 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm test
+      - name: Install Yarn
+        run: npm install --global yarn
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+      - name: Run Tests
+        run: yarn test
 
   publish:
     needs: build
@@ -32,7 +36,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-      - run: npm run bump-version
+      - run: yarn run bump-version
       - run: npm publish --tag master
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
