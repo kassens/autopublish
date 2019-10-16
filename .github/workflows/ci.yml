@@ -35,7 +35,7 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - name: Set version
-        run: node scripts/bump-version.js
+        run: env
         env:
           JKA_TEST: foobar
           COMMIT_SHA: ${{github.sha}}
