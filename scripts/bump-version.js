@@ -5,6 +5,8 @@ const packageJson = require("../package.json");
 
 const sha = process.env.COMMIT_SHA;
 
+console.log(process.env);
+
 if (!sha || sha.length !== 42) {
   process.stderr.write(
     "Expected COMMIT_SHA environment variable to be set to the commit sha.\n"
