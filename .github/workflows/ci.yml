@@ -35,7 +35,7 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - name: Set version
-        run: env
+        run: echo $COMMIT_SHA $JKA_TEST
         env:
           JKA_TEST: foobar
           COMMIT_SHA: ${{github.sha}}
