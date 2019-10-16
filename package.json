@@ -1,11 +1,12 @@
 {
   "name": "kassens-autopublish-test-a",
-  "version": "1.0.0",
+  "version": "0",
   "main": "index.js",
   "repository": "git@github.com:kassens/autopublish.git",
   "author": "Jan Kassens <jan@kassens.net>",
   "license": "MIT",
   "scripts": {
-    "test": "node --version; echo fail; exit 0"
+    "test": "node --version; echo fail; exit 0",
+    "bump-version": "node ./scripts/bump-version.js"
   }
 }
