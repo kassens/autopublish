@@ -1,0 +1,8 @@
+{
+  "name": "kassens-autopublish-test-a",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:kassens/autopublish.git",
+  "author": "Jan Kassens <jan@kassens.net>",
+  "license": "MIT"
+}
