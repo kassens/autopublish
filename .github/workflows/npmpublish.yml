@@ -1,4 +1,4 @@
-name: Node.js Package
+name: CI
 
 on:
   pull_request:
@@ -11,15 +11,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [8, 10, 12]
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm test
 
-  publish-npm:
+  publish:
     needs: build
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
